@@ -10,6 +10,7 @@ class Resolution extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'name',
+        'aspect_ratio'
     ];
 }

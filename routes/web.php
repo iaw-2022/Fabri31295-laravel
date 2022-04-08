@@ -15,12 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth'])->name('welcome');
 
 require __DIR__.'/auth.php';
 
 Route::get('/listado', 'App\Http\Controllers\ImageController@index')->name('images.index');
+
+Route::get('/categories', 'App\Http\Controllers\CategoryController@index')->name('categories.index');
+
+Route::get('/resolutions', 'App\Http\Controllers\ResolutionController@index')->name('resolutions.index');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout.perform');
+ });

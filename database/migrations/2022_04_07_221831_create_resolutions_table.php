@@ -16,15 +16,11 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->id();
             $table->string('name')->unique();
+            $table->string('aspect_ratio');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('resolutions');

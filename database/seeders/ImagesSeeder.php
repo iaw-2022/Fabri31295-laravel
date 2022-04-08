@@ -16,7 +16,7 @@ class ImagesSeeder extends Seeder
             'date' => Carbon::parse('2022-01-01'),
             'price' => '120',
             'category_name' => 'Fotografia',
-            'resolution_name' => '1:1'
+            'resolution_name' => '1920x1080'
 
         ]);
 
@@ -25,7 +25,7 @@ class ImagesSeeder extends Seeder
             'date' => Carbon::parse('2022-02-01'),
             'price' => '100',
             'category_name' => 'Ilustraciones',
-            'resolution_name' => '4:5'
+            'resolution_name' => '2560x960'
         ]);
 
         Image::create([
@@ -33,7 +33,7 @@ class ImagesSeeder extends Seeder
             'date' => Carbon::parse('2022-01-03'),
             'price' => '300',
             'category_name' => 'Diseño 3D',
-            'resolution_name' => '2:3'
+            'resolution_name' => '800x600'
         ]);
     }
 }
