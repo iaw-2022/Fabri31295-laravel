@@ -6,15 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
+    protected $primaryKey = 'name';
+    public $incrementing = false;
+
     public function up()
     {
         Schema::create('resolutions', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }

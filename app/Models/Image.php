@@ -9,7 +9,7 @@ class Image extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["name", "file_path", "date", "price", "created_at", "updated_at"];
+    protected $fillable = ["name", "date", "price", "created_at", "updated_at"];
 
     function downloadFile($file_name){
         $file = Storage::disk('dropbox')->get($file_name);
