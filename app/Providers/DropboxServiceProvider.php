@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use Spatie\Dropbox\Client as DropboxClient;
 use Spatie\FlysystemDropbox\DropboxAdapter;
 
+
 class DropboxServiceProvider extends ServiceProvider
 {
 
@@ -22,6 +23,7 @@ class DropboxServiceProvider extends ServiceProvider
             $client = new DropboxClient(
                 $config['authorizationToken']
             );
+
             return new Filesystem(new DropboxAdapter($client));
         });
     }

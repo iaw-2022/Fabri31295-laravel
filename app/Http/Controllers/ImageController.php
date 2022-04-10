@@ -2,24 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
+use Spatie\Dropbox\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Spatie\Dropbox\Client;
-use App\Models\Image;
 
 class ImageController extends Controller
 {
 
     public function __construct() {
 
-        $this->dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();
+        //$this->dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();
 
     }
 
     public function index() {
-        $images = Image::orderBy('created_at', 'desc')->get();
-
-        return view('images', compact('images'));
+       // $images_dropbox = Image::orderBy('id', 'desc')->get();
+       // return view('images', compact('images_dropbox'));
+       return view('images');
     }
 
 }

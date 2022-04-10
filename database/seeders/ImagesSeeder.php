@@ -15,6 +15,7 @@ class ImagesSeeder extends Seeder
             'name' => 'Messi',
             'date' => Carbon::parse('2022-01-01'),
             'price' => '120',
+            'public_url' => 'https://www.dropbox.com/s/z8ui870megh76sv/image1.jpg?dl=0',
             'category_name' => 'Fotografia',
             'resolution_name' => '1920x1080'
 
@@ -24,14 +25,16 @@ class ImagesSeeder extends Seeder
             'name' => 'Ronaldo',
             'date' => Carbon::parse('2022-02-01'),
             'price' => '100',
+            'public_url' => 'https://www.dropbox.com/s/xhkye6n7hk6m4yv/image2.jpg?dl=0',
             'category_name' => 'Ilustraciones',
             'resolution_name' => '2560x960'
         ]);
 
         Image::create([
-            'name' => 'Pavon',
+            'name' => 'Neymar',
             'date' => Carbon::parse('2022-01-03'),
             'price' => '300',
+            'public_url' => 'https://www.dropbox.com/s/sktwe20dqb31xi9/image3.jpg?dl=0',
             'category_name' => 'Diseño 3D',
             'resolution_name' => '800x600'
         ]);
