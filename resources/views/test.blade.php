@@ -8,10 +8,10 @@
 
 @section('content')
             <div class="card bg-white mb-3">
-                <div class="card-header text-white text-center" style="background-color: #343a40; ">Usuarios</div>
+                <div class="card-header text-white" style="background-color: #343a40;">Usuarios</div>
                     <div class="card-body" style="background-color: #F0E9D2;">
-                        <table id="users-table" class="display table text-center row-border table-hover cell-border" style="width:100%">
-                            <thead class = "">
+                        <table id="users-table" class="display table text-center row-border table-hover cell-border" style="width:100">
+                            <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Nombre</th>

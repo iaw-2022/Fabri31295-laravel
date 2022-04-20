@@ -129,7 +129,7 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-dark navbar-black',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -227,11 +227,6 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
-        ],
-        [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
@@ -243,12 +238,12 @@ return [
         [
             'text' => 'Categorias',
             'url'  => '/categories',
-            'icon' => 'fas fa-fw fa-solid fa-c',
+            'icon' => 'fas fa-fw fa-solid fa-cube',
         ],
         [
             'text' => 'Resoluciones',
             'url'  => '/resolutions',
-            'icon' => 'fas fa-fw fa-list-ul',
+            'icon' => 'fas fa-fw fa-expand',
         ],
         [
             'text' => 'Imagenes',

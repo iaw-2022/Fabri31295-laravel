@@ -19,3 +19,5 @@ Route::get('/categories', 'App\Http\Controllers\CategoryController@index')->name
 Route::get('/resolutions', 'App\Http\Controllers\ResolutionController@index')->name('resolutions.index');
 
 Route::get('/users', 'App\Http\Controllers\UserController@index')->name('users.index');
+
+

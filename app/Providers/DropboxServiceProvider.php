@@ -23,7 +23,6 @@ class DropboxServiceProvider extends ServiceProvider
             $client = new DropboxClient(
                 $config['authorizationToken']
             );
-
             return new Filesystem(new DropboxAdapter($client));
         });
     }

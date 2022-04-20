@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\DropboxServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class
 
@@ -196,7 +197,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
 
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class
 
     ])->toArray(),
 
