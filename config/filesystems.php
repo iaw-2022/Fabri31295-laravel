@@ -22,7 +22,9 @@ return [
 
         'dropbox' => [
             'driver' => 'dropbox',
-            'authorizationToken' => env('DROPBOX_TOKEN'),
+            'key' => env('DROPBOX_CLIENT_ID'),
+            'secret' => env('DROPBOX_SECRET_ID'),
+            'authorization_token' => env('DROPBOX_ACCESS_TOKEN'),
         ],
 
         's3' => [

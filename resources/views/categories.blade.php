@@ -8,9 +8,9 @@
 
 @section('content')
 <div class="card bg-white mb-3">
-                <div class="card-header text-white text-center" style="background-color: #343a40;">Categorias</div>
-                    <div class="card-body" style="background-color: #F0E9D2;">
-                        <table id="categories-table" class="table text-center table-striped" style="width:100%">
+                <div class="card-header text-white text-center" style="background-color: #222831;">Categorias</div>
+                    <div class="card-body">
+                        <table id="categories-table" class="table text-center  table-hover  table-striped" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -33,6 +33,7 @@
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/af-2.3.7/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.2/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 @stop
 
 @section('js')

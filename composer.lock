@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba5865ea40b8205ded7356b59af93730",
+    "content-hash": "f1b375e2ab69477d30e9af1392938b86",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1765,24 +1765,24 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.0.13",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "15dc1ccb2db8daef507c4d3e501565bae42a9f0e"
+                "reference": "cd9b487888fb33e25595d62110f14681a9e4b434"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/15dc1ccb2db8daef507c4d3e501565bae42a9f0e",
-                "reference": "15dc1ccb2db8daef507c4d3e501565bae42a9f0e",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/cd9b487888fb33e25595d62110f14681a9e4b434",
+                "reference": "cd9b487888fb33e25595d62110f14681a9e4b434",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "league/mime-type-detection": "^1.0.0",
                 "php": "^8.0.2"
             },
             "conflict": {
-                "aws/aws-sdk-php": "3.209.31 || 3.210.0",
                 "guzzlehttp/guzzle": "<7.0",
                 "guzzlehttp/ringphp": "<1.1.1",
                 "symfony/http-client": "<5.2"
@@ -1793,15 +1793,13 @@
                 "aws/aws-sdk-php": "^3.198.1",
                 "composer/semver": "^3.0",
                 "ext-fileinfo": "*",
-                "ext-ftp": "*",
                 "ext-zip": "*",
-                "friendsofphp/php-cs-fixer": "^3.5",
+                "friendsofphp/php-cs-fixer": "^3.2",
                 "google/cloud-storage": "^1.23",
-                "microsoft/azure-storage-blob": "^1.1",
                 "phpseclib/phpseclib": "^2.0",
                 "phpstan/phpstan": "^0.12.26",
                 "phpunit/phpunit": "^9.5.11",
-                "sabre/dav": "^4.3.1"
+                "sabre/dav": "^4.1"
             },
             "type": "library",
             "autoload": {
@@ -1835,7 +1833,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.0.13"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.0.0"
             },
             "funding": [
                 {
@@ -1851,7 +1849,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-02T08:55:13+00:00"
+            "time": "2022-01-13T21:24:17+00:00"
         },
         {
             "name": "league/mime-type-detection",
