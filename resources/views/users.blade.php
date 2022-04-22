@@ -7,9 +7,9 @@
 @stop
 
 @section('content')
-            <div class="card bg-white mb-3">
+            <div class="card bg-dark mb-3">
                 <div class="card-header text-white text-center" style="background-color: #222831; ">Usuarios</div>
-                    <div class="card-body">
+                    <div class="card-body bg-white ">
                         <table id="users-table" class="display table text-center row-border  table-striped table-hover cell-border" style="width:100%">
                             <thead class = "">
                                 <tr>
@@ -53,7 +53,8 @@
                                     "first":    "Primero",
                                     "last":     "Último"
                     }
-                }
+                },
+                responsive: true
             });
         } );
     </script>

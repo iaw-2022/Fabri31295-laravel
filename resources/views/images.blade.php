@@ -7,10 +7,10 @@
 @stop
 
 @section('content')
-<div class="card bg-white mb-3">
-                <div class="card-header text-white text-center" style="background-color: #222831;">Imagenes</div>
-                    <div class="card-body" \\>
-                        <table id="images-table" class="table  table-hover  text-center table-white table-bordered table-striped">
+<div class="card bg-dark mb-3">
+                <div class="card-header text-center" style="background-color: #222831;">Imagenes</div>
+                    <div class="card-body bg-white" \\>
+                        <table id="images-table" class="table table-hover text-center table-white table-bordered table-striped">
                             <thead class = "thead">
                                 <tr>
                                     <th>Nombre</th>
@@ -74,7 +74,8 @@
                                     "first":    "Primero",
                                     "last":     "Último"
                     }
-                }
+                },
+                responsive: true
             });
         } );
     </script>

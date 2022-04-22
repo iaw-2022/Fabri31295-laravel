@@ -7,9 +7,9 @@
 @stop
 
 @section('content')
-<div class="card bg-white mb-3">
+<div class="card bg-dark mb-3">
                 <div class="card-header text-white text-center" style="background-color: #222831;">Categorias</div>
-                    <div class="card-body">
+                    <div class="card-body bg-white ">
                         <table id="categories-table" class="table text-center  table-hover  table-striped" style="width:100%">
                             <thead>
                                 <tr>
@@ -51,7 +51,8 @@
                                     "first":    "Primero",
                                     "last":     "Último"
                     }
-                }
+                },
+                responsive: true
             });
         } );
     </script>

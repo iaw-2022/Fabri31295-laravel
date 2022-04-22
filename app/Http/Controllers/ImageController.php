@@ -11,20 +11,10 @@ use Storage;
 class ImageController extends Controller
 {
 
-    public function index() {
+    public function index($path = '/images') {
 
         $data = DB::table('images')->get();
         return view('images',['data' => $data]);
-    }
-
-    public function preview($path = '/images') {
-
-
-        //$image = Storage::disk('dropbox')->read('/images/'.$item->name.'-preview.jpg');
-        //$imgData = base64_encode($image);
-        //$array[] = $imgData;
-
-
     }
 
 }
