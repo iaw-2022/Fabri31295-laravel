@@ -13,23 +13,21 @@
                         <table id="images-table" class="table table-hover text-center table-white table-bordered table-striped">
                             <thead class = "thead">
                                 <tr>
+                                    <th>Preview</th>
                                     <th>Nombre</th>
                                     <th>Categoria</th>
                                     <th>Resolucion</th>
                                     <th>Precio U$S</th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($data as $item)
                                 <tr>
+                                    <td><img src="{{$item->public_url}}" width="120px;" height="90px;" alt="preview"/></td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->category_name}}</td>
                                     <td>{{$item->resolution_name}}</td>
                                     <td>{{$item->price}}</td>
-                                    <td>
-                                        <a class="btn btn-sm" data-toggle="modal" data-target="#myModal">Preview</a>
-                                    </td>
                                 </tr>
                                 @endforeach
                                 <div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

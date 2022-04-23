@@ -14,7 +14,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/images', 'App\Http\Controllers\ImageController@index')->name('images.index');
 
-Route::get('/images/{image}/preview', 'App\Http\Controllers\ImageController@preview')->name('images.preview');
+Route::get('preview', 'App\Http\Controllers\ImageController@preview')->name('images.preview');
 
 Route::get('/categories', 'App\Http\Controllers\CategoryController@index')->name('categories.index');
 

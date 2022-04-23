@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc677320d51272affed7dc0d544d1116",
+    "content-hash": "392fa9c313fbe616f099ab826cf32bbc",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -108,69 +108,6 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
-        },
-        {
-            "name": "dcblogdev/laravel-dropbox",
-            "version": "v3.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dcblogdev/laravel-dropbox.git",
-                "reference": "2756e5dca98f93f417cb5ba3a64bd96915c40867"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dcblogdev/laravel-dropbox/zipball/2756e5dca98f93f417cb5ba3a64bd96915c40867",
-                "reference": "2756e5dca98f93f417cb5ba3a64bd96915c40867",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6|^7",
-                "illuminate/support": "^5.5|^5.6|^5.7|^5.8|^6.0|^7.0|^8.0|^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Dcblogdev\\Dropbox\\DropboxServiceProvider"
-                    ],
-                    "aliases": {
-                        "Dropbox": "Dcblogdev\\Dropbox\\Facades\\Dropbox"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dcblogdev\\Dropbox\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "David Carr",
-                    "email": "dave@dcblog.dev",
-                    "homepage": "https://dcblog.dev"
-                }
-            ],
-            "description": "A Laravel Dropbox v2 package",
-            "homepage": "https://github.com/dcblogdev/laravel-dropbox",
-            "keywords": [
-                "dropbox",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/dcblogdev/laravel-dropbox/issues",
-                "source": "https://github.com/dcblogdev/laravel-dropbox/tree/v3.0.4"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/dcblogdev",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-01-29T12:51:59+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -845,70 +782,6 @@
             "time": "2022-04-13T20:35:52+00:00"
         },
         {
-            "name": "graham-campbell/guzzle-factory",
-            "version": "v5.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GrahamCampbell/Guzzle-Factory.git",
-                "reference": "f93cfbffd422920f5d9915ec7d682f030ddffda6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Guzzle-Factory/zipball/f93cfbffd422920f5d9915ec7d682f030ddffda6",
-                "reference": "f93cfbffd422920f5d9915ec7d682f030ddffda6",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^7.2",
-                "php": "^7.2.5 || ^8.0"
-            },
-            "require-dev": {
-                "graham-campbell/analyzer": "^3.0.4",
-                "phpunit/phpunit": "^8.5.8 || ^9.3.7"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "GrahamCampbell\\GuzzleFactory\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graham Campbell",
-                    "email": "hello@gjcampbell.co.uk",
-                    "homepage": "https://github.com/GrahamCampbell"
-                }
-            ],
-            "description": "Provides A Simple Guzzle Factory With Good Defaults",
-            "keywords": [
-                "Graham Campbell",
-                "GrahamCampbell",
-                "Guzzle",
-                "Guzzle Factory",
-                "Guzzle-Factory",
-                "http"
-            ],
-            "support": {
-                "issues": "https://github.com/GrahamCampbell/Guzzle-Factory/issues",
-                "source": "https://github.com/GrahamCampbell/Guzzle-Factory/tree/v5.0.3"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/GrahamCampbell",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/graham-campbell/guzzle-factory",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-11-21T21:41:36+00:00"
-        },
-        {
             "name": "graham-campbell/result-type",
             "version": "v1.0.4",
             "source": {
@@ -1295,16 +1168,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.7.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "744ebba495319501b873a4e48787759c72e3fb8c"
+                "reference": "71167284814a9a08c51699d4c4fefd0303eede73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/744ebba495319501b873a4e48787759c72e3fb8c",
-                "reference": "744ebba495319501b873a4e48787759c72e3fb8c",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/71167284814a9a08c51699d4c4fefd0303eede73",
+                "reference": "71167284814a9a08c51699d4c4fefd0303eede73",
                 "shasum": ""
             },
             "require": {
@@ -1321,6 +1194,7 @@
                 "ext-imagick": "to use Imagick based image processing.",
                 "intervention/imagecache": "Caching extension for the Intervention Image library"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1347,8 +1221,8 @@
             "authors": [
                 {
                     "name": "Oliver Vogel",
-                    "email": "oliver@olivervogel.com",
-                    "homepage": "http://olivervogel.com/"
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
                 }
             ],
             "description": "Image handling and manipulation library with support for Laravel integration",
@@ -1363,11 +1237,11 @@
             ],
             "support": {
                 "issues": "https://github.com/Intervention/image/issues",
-                "source": "https://github.com/Intervention/image/tree/2.7.1"
+                "source": "https://github.com/Intervention/image/tree/master"
             },
             "funding": [
                 {
-                    "url": "https://www.paypal.me/interventionphp",
+                    "url": "https://paypal.me/interventionio",
                     "type": "custom"
                 },
                 {
@@ -1375,7 +1249,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-16T16:49:26+00:00"
+            "time": "2022-04-19T17:58:11+00:00"
         },
         {
             "name": "jeroennoten/laravel-adminlte",
@@ -1438,16 +1312,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.7.0",
+            "version": "v9.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "54c9696ee3e558ab29317ed6e0cb16bb9db5aad4"
+                "reference": "4d5a07640891b772188d7737348886a0222737d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/54c9696ee3e558ab29317ed6e0cb16bb9db5aad4",
-                "reference": "54c9696ee3e558ab29317ed6e0cb16bb9db5aad4",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4d5a07640891b772188d7737348886a0222737d8",
+                "reference": "4d5a07640891b772188d7737348886a0222737d8",
                 "shasum": ""
             },
             "require": {
@@ -1613,20 +1487,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-04-05T15:07:51+00:00"
+            "time": "2022-04-19T15:01:23+00:00"
         },
         {
             "name": "laravel/sanctum",
-            "version": "v2.15.0",
+            "version": "v2.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "5be160413b6f37dcf8758663edeab12d0e806f56"
+                "reference": "31fbe6f85aee080c4dc2f9b03dc6dd5d0ee72473"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/5be160413b6f37dcf8758663edeab12d0e806f56",
-                "reference": "5be160413b6f37dcf8758663edeab12d0e806f56",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/31fbe6f85aee080c4dc2f9b03dc6dd5d0ee72473",
+                "reference": "31fbe6f85aee080c4dc2f9b03dc6dd5d0ee72473",
                 "shasum": ""
             },
             "require": {
@@ -1678,7 +1552,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2022-03-28T13:53:05+00:00"
+            "time": "2022-04-08T13:39:49+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -1809,16 +1683,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.2.3",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "47b015bc4e50fd4438c1ffef6139a1fb65d2ab71"
+                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/47b015bc4e50fd4438c1ffef6139a1fb65d2ab71",
-                "reference": "47b015bc4e50fd4438c1ffef6139a1fb65d2ab71",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/32a49eb2b38fe5e5c417ab748a45d0beaab97955",
+                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955",
                 "shasum": ""
             },
             "require": {
@@ -1827,17 +1701,19 @@
                 "php": "^7.4 || ^8.0",
                 "psr/event-dispatcher": "^1.0",
                 "symfony/deprecation-contracts": "^2.1 || ^3.0",
-                "symfony/polyfill-php80": "^1.15"
+                "symfony/polyfill-php80": "^1.16"
             },
             "require-dev": {
                 "cebe/markdown": "^1.0",
                 "commonmark/cmark": "0.30.0",
                 "commonmark/commonmark.js": "0.30.0",
                 "composer/package-versions-deprecated": "^1.8",
+                "embed/embed": "^4.4",
                 "erusev/parsedown": "^1.0",
                 "ext-json": "*",
                 "github/gfm": "0.29.0",
                 "michelf/php-markdown": "^1.4",
+                "nyholm/psr7": "^1.5",
                 "phpstan/phpstan": "^0.12.88 || ^1.0.0",
                 "phpunit/phpunit": "^9.5.5",
                 "scrutinizer/ocular": "^1.8.1",
@@ -1852,7 +1728,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.3-dev"
+                    "dev-main": "2.4-dev"
                 }
             },
             "autoload": {
@@ -1909,7 +1785,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-26T21:24:45+00:00"
+            "time": "2022-04-07T22:37:05+00:00"
         },
         {
             "name": "league/config",
@@ -2083,16 +1959,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.9.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "aa70e813a6ad3d1558fc927863d47309b4c23e69"
+                "reference": "ff6248ea87a9f116e78edd6002e39e5128a0d4dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/aa70e813a6ad3d1558fc927863d47309b4c23e69",
-                "reference": "aa70e813a6ad3d1558fc927863d47309b4c23e69",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/ff6248ea87a9f116e78edd6002e39e5128a0d4dd",
+                "reference": "ff6248ea87a9f116e78edd6002e39e5128a0d4dd",
                 "shasum": ""
             },
             "require": {
@@ -2123,7 +1999,7 @@
             "description": "Mime-type detection for Flysystem",
             "support": {
                 "issues": "https://github.com/thephpleague/mime-type-detection/issues",
-                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.9.0"
+                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.11.0"
             },
             "funding": [
                 {
@@ -2135,7 +2011,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-21T11:48:40+00:00"
+            "time": "2022-04-17T13:12:02+00:00"
         },
         {
             "name": "masbug/flysystem-google-drive-ext",
@@ -2199,16 +2075,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "d7fd7450628561ba697b7097d86db72662f54aef"
+                "reference": "4192345e260f1d51b365536199744b987e160edc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/d7fd7450628561ba697b7097d86db72662f54aef",
-                "reference": "d7fd7450628561ba697b7097d86db72662f54aef",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/4192345e260f1d51b365536199744b987e160edc",
+                "reference": "4192345e260f1d51b365536199744b987e160edc",
                 "shasum": ""
             },
             "require": {
@@ -2282,7 +2158,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.4.0"
+                "source": "https://github.com/Seldaek/monolog/tree/2.5.0"
             },
             "funding": [
                 {
@@ -2294,7 +2170,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-14T12:44:37+00:00"
+            "time": "2022-04-08T15:43:54+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3599,147 +3475,6 @@
                 }
             ],
             "time": "2022-03-27T21:42:02+00:00"
-        },
-        {
-            "name": "spatie/dropbox-api",
-            "version": "1.20.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/dropbox-api.git",
-                "reference": "f7563632fa6e4970b895805169688be273fcbf19"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/dropbox-api/zipball/f7563632fa6e4970b895805169688be273fcbf19",
-                "reference": "f7563632fa6e4970b895805169688be273fcbf19",
-                "shasum": ""
-            },
-            "require": {
-                "graham-campbell/guzzle-factory": "^3.0|^4.0|^5.0",
-                "guzzlehttp/guzzle": "^6.2|^7.0",
-                "php": "^7.1|^8.0"
-            },
-            "conflict": {
-                "guzzlehttp/psr7": "<1.7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Dropbox\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Vanderbist",
-                    "email": "alex.vanderbist@gmail.com",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A minimal implementation of Dropbox API v2",
-            "homepage": "https://github.com/spatie/dropbox-api",
-            "keywords": [
-                "Dropbox-API",
-                "api",
-                "dropbox",
-                "spatie",
-                "v2"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/dropbox-api/issues",
-                "source": "https://github.com/spatie/dropbox-api/tree/1.20.1"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-03-29T06:41:44+00:00"
-        },
-        {
-            "name": "spatie/flysystem-dropbox",
-            "version": "2.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/flysystem-dropbox.git",
-                "reference": "60ac0f929da31aa1321b4b2ac2ca0ba961e4664a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/flysystem-dropbox/zipball/60ac0f929da31aa1321b4b2ac2ca0ba961e4664a",
-                "reference": "60ac0f929da31aa1321b4b2ac2ca0ba961e4664a",
-                "shasum": ""
-            },
-            "require": {
-                "league/flysystem": "^2.0.4 || ^3.0.0",
-                "php": "^8.0",
-                "spatie/dropbox-api": "^1.17.1"
-            },
-            "require-dev": {
-                "phpspec/prophecy-phpunit": "^2.0.1",
-                "phpunit/phpunit": "^9.5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\FlysystemDropbox\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Vanderbist",
-                    "email": "alex.vanderbist@gmail.com",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Flysystem Adapter for the Dropbox v2 API",
-            "homepage": "https://github.com/spatie/flysystem-dropbox",
-            "keywords": [
-                "Flysystem",
-                "api",
-                "dropbox",
-                "flysystem-dropbox",
-                "spatie",
-                "v2"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/flysystem-dropbox/issues",
-                "source": "https://github.com/spatie/flysystem-dropbox/tree/2.0.6"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-02-09T16:01:40+00:00"
         },
         {
             "name": "symfony/console",
@@ -6553,16 +6288,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.13.9",
+            "version": "v1.13.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "7bb294fe99fc42c3b1bee83fb667cd7698b3c385"
+                "reference": "cbf55e1a392724313f7726c38578b5e008df6a0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/7bb294fe99fc42c3b1bee83fb667cd7698b3c385",
-                "reference": "7bb294fe99fc42c3b1bee83fb667cd7698b3c385",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/cbf55e1a392724313f7726c38578b5e008df6a0f",
+                "reference": "cbf55e1a392724313f7726c38578b5e008df6a0f",
                 "shasum": ""
             },
             "require": {
@@ -6609,7 +6344,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-04-04T15:21:51+00:00"
+            "time": "2022-04-14T18:29:22+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -8680,16 +8415,16 @@
         },
         {
             "name": "spatie/ignition",
-            "version": "1.2.7",
+            "version": "1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ignition.git",
-                "reference": "2f059cf42b48f7c522efbba1c05ad59fc2c1a3f2"
+                "reference": "9c8c0c6feb54e11589e4fced59b64b7c860341c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ignition/zipball/2f059cf42b48f7c522efbba1c05ad59fc2c1a3f2",
-                "reference": "2f059cf42b48f7c522efbba1c05ad59fc2c1a3f2",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/9c8c0c6feb54e11589e4fced59b64b7c860341c0",
+                "reference": "9c8c0c6feb54e11589e4fced59b64b7c860341c0",
                 "shasum": ""
             },
             "require": {
@@ -8746,20 +8481,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-29T08:48:34+00:00"
+            "time": "2022-04-23T20:20:23+00:00"
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "1.2.0",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "2b54c8c66f2d280f25e15064ebe3d5e3eda19820"
+                "reference": "924d1ae878874ad0bb49f63b69a9af759a34ee78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/2b54c8c66f2d280f25e15064ebe3d5e3eda19820",
-                "reference": "2b54c8c66f2d280f25e15064ebe3d5e3eda19820",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/924d1ae878874ad0bb49f63b69a9af759a34ee78",
+                "reference": "924d1ae878874ad0bb49f63b69a9af759a34ee78",
                 "shasum": ""
             },
             "require": {
@@ -8836,7 +8571,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-04-01T21:01:58+00:00"
+            "time": "2022-04-14T18:04:51+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -8891,7 +8626,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "intervention/image": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

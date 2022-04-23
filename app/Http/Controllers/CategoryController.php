@@ -9,6 +9,6 @@ class CategoryController extends Controller
 {
     function index() {
         $data = DB::table('categories')->get();
-        return view('categories',['data' => $data]);
+        return view('categories.index',['data' => $data]);
     }
 }

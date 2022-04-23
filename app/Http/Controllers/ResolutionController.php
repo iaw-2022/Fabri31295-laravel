@@ -9,6 +9,6 @@ class ResolutionController extends Controller
 {
     function index() {
         $data = DB::table('resolutions')->get();
-        return view('resolutions',['data' => $data]);
+        return view('resolutions.index',['data' => $data]);
     }
 }
