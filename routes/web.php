@@ -1,26 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ResolutionController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 require __DIR__.'/auth.php';
 
-Route::get('/images', 'App\Http\Controllers\ImageController@index')->middleware('auth');
+Route::resource('/images', ImageController::class)->middleware('auth');
 
-Route::get('preview', 'App\Http\Controllers\ImageController@preview')->middleware('auth');
+Route::resource('/categories', CategoryController::class)->middleware('auth');
 
-Route::get('/categories', 'App\Http\Controllers\CategoryController@index')->middleware('auth');
+Route::resource('/resolutions', ResolutionController::class)->middleware('auth');
 
-Route::get('/resolutions', 'App\Http\Controllers\ResolutionController@index')->middleware('auth');
-
-Route::get('/users', 'App\Http\Controllers\UserController@index')->middleware('auth');
+Route::resource('/users', UserController::class)->middleware('auth');
 
 
 

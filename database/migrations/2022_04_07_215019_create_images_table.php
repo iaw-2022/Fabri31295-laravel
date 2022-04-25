@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('name');
             $table->date('date');
             $table->float('price');
-            $table->string('public_url');
+            $table->string('url');
             $table->timestamps();
         });
     }

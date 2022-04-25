@@ -8,7 +8,9 @@
 
 @section('content')
             <div class="card bg-dark mb-3">
-                <div class="card-header text-white text-center" style="background-color: #222831; ">Usuarios</div>
+                <div id="card-header" class="card-header text-white text-center">Usuarios
+                    <a id="btn-crear" href="/users/create" class="btn btn-primary">CREAR</a>
+                </div>
                     <div class="card-body bg-white ">
                         <table id="users-table" class="display table text-center row-border  table-striped table-hover cell-border" style="width:100%">
                             <thead class = "">
@@ -16,6 +18,8 @@
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Email</th>
+                                    <th>Fecha de creacion</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,6 +28,15 @@
                                     <td>{{$item->id}}</td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->email}}</td>
+                                    <td>{{$item->created_at}}</td>
+                                    <td>
+                                        <form action="{{ route('users.destroy',$item->id) }}" method="POST">
+                                        <a href="/users/{{$item->id}}/edit" class="btn btn-info">Editar</a>
+                                            @csrf
+                                            @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

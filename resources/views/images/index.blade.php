@@ -8,43 +8,39 @@
 
 @section('content')
 <div class="card bg-dark mb-3">
-                <div class="card-header text-center" style="background-color: #222831;">Imagenes</div>
-                    <div class="card-body bg-white" \\>
-                        <table id="images-table" class="table table-hover text-center table-white table-bordered table-striped">
+<div id="card-header"  class="card-header text-white text-center" >Imagenes
+                        <a id="btn-crear" href="/users/create" class="btn btn-primary">CREAR</a>
+                    </div>
+                    <div class="card-body bg-white"\>
+                        <table id="images-table" class="table text-center  table-hover  table-striped" style="width:100%">
                             <thead class = "thead">
                                 <tr>
                                     <th>Preview</th>
                                     <th>Nombre</th>
                                     <th>Categoria</th>
                                     <th>Resolucion</th>
-                                    <th>Precio U$S</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($data as $item)
                                 <tr>
-                                    <td><img src="{{$item->public_url}}" width="120px;" height="90px;" alt="preview"/></td>
+                                    <td><img src="{{$item->url}}" width="120px;" height="90px;" alt="preview"/></td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->category_name}}</td>
                                     <td>{{$item->resolution_name}}</td>
-                                    <td>{{$item->price}}</td>
+                                    <td>{{'U$S '.$item->price}}</td>
+                                    <td id="actions">
+                                        <form action="{{ route('images.destroy',$item->id) }}" method="POST">
+                                            <a href="/images/{{$item->id}}/edit" class="btn btn-info">Editar</a>
+                                                @csrf
+                                                @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
-                                <div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header text-center">
-                                            <h5 class="modal-title">Preview</h5>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img src="#" class="img-responsive">
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" onclick="$('#myModal').modal('hide');">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
                             </tbody>
                         </table>
                     </div>
