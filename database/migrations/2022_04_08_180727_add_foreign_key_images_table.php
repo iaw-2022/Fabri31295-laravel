@@ -14,12 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::table('images', function (Blueprint $table) {
-            $table->string('category_name')->unsigned();
-            $table->foreign('category_name')
+            $table->string('category')->unsigned();
+            $table->foreign('category')
                  ->references('name')->on('categories');
 
-            $table->string('resolution_name')->unsigned();
-            $table->foreign('resolution_name')
+            $table->string('resolution')->unsigned();
+            $table->foreign('resolution')
                  ->references('name')->on('resolutions');
         });
     }

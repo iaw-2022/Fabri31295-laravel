@@ -8,9 +8,9 @@
 
 @section('content')
 <div class="card bg-dark mb-3">
-                <div class="card-header text-center" style="background-color: #222831;">Cargar imagen</div>
+                <div class="card-header text-center">Cargar imagen</div>
                     <div class="card-body bg-white"\>
-                        <form action="/images" method="POST">
+                        <form action="/images" method="POST" enctype="multipart/form-data">
                             @csrf
                         <div class="mb-3">
                             <label class="form-label">Nombre</label>
@@ -22,7 +22,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Categoria</label>
-                                <select option name="option-categories" id="option-categories">
+                                <select option name="category" id="category">
+                                    <option value="none" selected disabled hidden>Seleccione una opcion</option>
                                     @foreach($categories as $category)
                                     <option>{{$category->name}}</option>
                                     @endforeach
@@ -30,7 +31,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Resolucion</label>
-                                <select option name="option-categories" id="option-categories">
+                                <select option name="resolution" id="resolution">
+                                    <option value="none" selected disabled hidden>Seleccione una opcion</option>
                                     @foreach($resolutions as $resolution)
                                     <option>{{$resolution->name}}</option>
                                     @endforeach
@@ -42,10 +44,10 @@
                         </div>
                         <div class="mb-3">
                             <p>
-                                <label for="uploads">
+                                <label for="/images">
                                 Elige la imágen que deseas cargar:
                                 </label>
-                                <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png, .svg, .gif" multiple>
+                                <input type="file" id="newImage" name="newImage" accept=".jpg, .jpeg, .png, .svg, .gif">
                             </p>
                         </div>
                         <a href="/images" class="btn btn-secondary" tabindex="5">Cancelar</a>

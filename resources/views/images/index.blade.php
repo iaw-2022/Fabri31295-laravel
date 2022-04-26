@@ -9,7 +9,7 @@
 @section('content')
 <div class="card bg-dark mb-3">
 <div id="card-header"  class="card-header text-white text-center" >Imagenes
-                        <a id="btn-crear" href="/users/create" class="btn btn-primary">CREAR</a>
+                        <a id="btn-crear" href="/images/create" class="btn btn-primary">CREAR</a>
                     </div>
                     <div class="card-body bg-white"\>
                         <table id="images-table" class="table text-center  table-hover  table-striped" style="width:100%">
@@ -28,8 +28,8 @@
                                 <tr>
                                     <td><img src="{{$item->url}}" width="120px;" height="90px;" alt="preview"/></td>
                                     <td>{{$item->name}}</td>
-                                    <td>{{$item->category_name}}</td>
-                                    <td>{{$item->resolution_name}}</td>
+                                    <td>{{$item->category}}</td>
+                                    <td>{{$item->resolution}}</td>
                                     <td>{{'U$S '.$item->price}}</td>
                                     <td id="actions">
                                         <form action="{{ route('images.destroy',$item->id) }}" method="POST">

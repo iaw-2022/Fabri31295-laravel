@@ -30,35 +30,36 @@ class ImageController extends Controller
         $image = new Image();
         $image->name = $request->get('name');
         $image->date = $request->get('date');
+        $image->price = $request->get('price');
+        $image->url = '/';
         $image->category = $request->get('category');
         $image->resolution = $request->get('resolution');
-
-        Storage::disk('google')->insert($request->image);
-        $image->url = Storage::disk('google')->url($image->name);
-
-
-
         $image->save();
 
         return redirect('/images');
+
     }
 
     function edit($id) {
 
         $image = Image::find($id);
-        return view('images.edit')->with('image',$image);
+        $categories = DB::table('categories')->get();
+        $resolutions = DB::table('resolutions')->get();
+
+        return view('images.edit',['image' => $image,'categories' => $categories, 'resolutions' => $resolutions]);
     }
 
     public function update(Request $request, $id)
     {
-        $resolution = Image::find($id);
+        $image = Image::find($id);
         $image->name = $request->get('name');
         $image->date = $request->get('date');
+        $image->price = $request->get('price');
         $image->category = $request->get('category');
         $image->resolution = $request->get('resolution');
-        $resolution->save();
+        $image->save();
 
-        return redirect('/resolutions');
+        return redirect('/images');
     }
 
     function destroy($id) {

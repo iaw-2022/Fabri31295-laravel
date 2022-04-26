@@ -16,8 +16,8 @@ class ImagesSeeder extends Seeder
             'date' => Carbon::parse('2022-01-01'),
             'price' => '120',
             'url' => 'https://drive.google.com/uc?id=1mxqRMbxMmtfQ30CbsqBeujSeBgx7ToEw&export=media',
-            'category_name' => 'Fotografia',
-            'resolution_name' => '1920x1080'
+            'category' => 'Fotografia',
+            'resolution' => '1920x1080'
 
         ]);
 
@@ -26,8 +26,8 @@ class ImagesSeeder extends Seeder
             'date' => Carbon::parse('2022-02-01'),
             'price' => '100',
             'url' => 'https://drive.google.com/uc?id=11pUU6yS9HvLUOaXGYvK-1dq3v9SxxEOM&export=media',
-            'category_name' => 'Ilustraciones',
-            'resolution_name' => '2560x960'
+            'category' => 'Ilustraciones',
+            'resolution' => '2560x960'
         ]);
 
         Image::create([
@@ -35,8 +35,8 @@ class ImagesSeeder extends Seeder
             'date' => Carbon::parse('2022-01-03'),
             'price' => '300',
             'url' => 'https://drive.google.com/uc?id=1CUOweaBn-GV5cR3vqQYZP_DH-yyk-c9t&export=media',
-            'category_name' => 'Diseño 3D',
-            'resolution_name' => '800x600'
+            'category' => 'Diseño 3D',
+            'resolution' => '800x600'
         ]);
 
         Image::create([
@@ -44,8 +44,8 @@ class ImagesSeeder extends Seeder
             'date' => Carbon::parse('2022-04-03'),
             'price' => '50',
             'url' => 'https://drive.google.com/uc?id=1iFICYlKERBcJ4yZxrgKx3rkXbDMu90N_&export=media',
-            'category_name' => 'Stickers',
-            'resolution_name' => '800x600'
+            'category' => 'Stickers',
+            'resolution' => '800x600'
         ]);
     }
 }
