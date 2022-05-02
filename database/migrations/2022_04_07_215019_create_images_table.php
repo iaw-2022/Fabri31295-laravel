@@ -13,6 +13,7 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->id();
             $table->string('name');
+            $table->string('filename');
             $table->date('date');
             $table->float('price');
             $table->string('url');

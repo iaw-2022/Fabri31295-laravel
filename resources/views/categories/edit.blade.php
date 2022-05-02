@@ -3,20 +3,30 @@
 @section('title', 'Proyecto de Web')
 
 @section('content_header')
-    <h1>Editar registro</h1>
+    <h1></h1>
 @stop
 
 @section('content')
-    <form action="/categories/{{$category->id}}" method="POST">
-        @csrf
-        @method('PUT')
-    <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input id="name" name="name" type="text" class="form-control" value="{{$category->name}}">
+<div id="card-form" class="card bg-dark mb-3">
+    <div class="card-header text-center">Editar categoria</div>
+        <div class="card-body bg-white"\>
+            <form id="forms" action="/categories/{{$category->id}}" method="POST">
+                @csrf
+                @method('PUT')
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input id="name" name="name" type="text" class="form-control" value="{{$category->name}}" required
+                    placeholder="Ingresar nombre" oninvalid="this.setCustomValidity('Ingrese un nombre aqui')"
+                    oninput="this.setCustomValidity('')">
+            </div>
+            <div id="buttons-forms">
+                <a href="/categories" class="btn btn-secondary" tabindex="5">Cancelar</a>
+                <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
+            </div>
+            </form>
+        </div>
     </div>
-    <a href="/categories" class="btn btn-secondary" tabindex="5">Cancelar</a>
-    <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
-    </form>
+</div>
 @stop
 
 @section('css')

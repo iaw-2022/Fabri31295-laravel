@@ -8,11 +8,13 @@
 
 @section('content')
 <div class="card bg-dark mb-3">
-                <div id="card-header" class="card-header text-white text-center" style="background-color: #222831;">Resoluciones
-                    <a id="btn-crear" href="/resolutions/create" class="btn btn-primary">CREAR</a>
+                <div id="card-header" class="card-header text-white text-center" >Resoluciones
+                    <form action="{{ route('resolutions.create') }}" method="POST">
+                        <a type="submit" href="/resolutions/create" class="btn btn-default btn-circle" data-bs-toggle="tooltip" title="Crear resolucion"><i class="fa fa-plus"></i></a>
+                    </form>
                 </div>
                     <div class="card-body bg-white ">
-                        <table id="resolutions-table" class="table text-center  table-hover table-white table-bordered  table-striped">
+                        <table id="resolutions-table" class="table text-center  table-hover  table-striped" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -30,12 +32,15 @@
                                     <td>{{$item->aspect_ratio}}</td>
                                     <td>{{$item->created_at}}</td>
                                     <td>
-                                        <form action="{{ route('resolutions.destroy',$item->id) }}" method="POST">
-                                        <a href="/resolutions/{{$item->id}}/edit" class="btn btn-info">Editar</a>
+                                        <a href="/resolutions/{{$item->id}}/edit" class="btn"  id="btn-edit" data-bs-toggle="tooltip" title="Editar resolucion">
+                                            <i class="fa fa-pencil fa-2x"></i>
+                                        </a>
                                             @csrf
                                             @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
+                                        <a href="#delete{{$item->id}}" class="btn" id="btn-delete" data-bs-toggle="tooltip" title="Eliminar resolucion" data-toggle="modal">
+                                            <i class="fa fa-trash fa-2x"></i>
+                                        </a>
+                                    @include('components.modal',['dir'=>'resolutions.destroy'])
                                     </td>
                                 </tr>
                                 @endforeach
@@ -49,6 +54,7 @@
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/af-2.3.7/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.2/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @stop
 
 @section('js')

@@ -7,23 +7,31 @@
 @stop
 
 @section('content')
-<div class="card bg-dark mb-3">
-                <div class="card-header text-center" style="background-color: #222831;">Crear registro</div>
+<div id="card-form" class="card bg-dark mb-3">
+                <div class="card-header text-center">Crear registro</div>
                     <div class="card-body bg-white"\>
-                        <form action="/resolutions" method="POST">
+                        <form id="forms" action="/resolutions" method="POST">
                             @csrf
-                        <div id="name-createResolution" class="mb-3">
+                        <div class="mb-3">
                             <label for="" class="form-label">Resolucion</label>
-                            <input id="name1" name="name1" type="text" class="form-control" tabindex="1">
+                            <input id="name1" name="name1" type="text" class="form-control" tabindex="1" required
+                                placeholder="Ancho" oninvalid="this.setCustomValidity('Ingrese el ancho aqui')"
+                                oninput="this.setCustomValidity('')">
                             <label for="" class="form-label">x</label>
-                            <input id="name1" name="name2" type="text" class="form-control" tabindex="1">
+                            <input id="name2" name="name2" type="text" class="form-control" tabindex="1" required
+                                placeholder="Alto" oninvalid="this.setCustomValidity('Ingrese el alto aqui')"
+                                oninput="this.setCustomValidity('')">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Relacion de aspecto</label>
-                            <input id="aspect_ratio" name="aspect_ratio" type="text" class="form-control" tabindex="2">
+                            <input id="aspect_ratio" name="aspect_ratio" type="text" class="form-control" tabindex="2" required
+                                placeholder="Ingrese la relacion de aspecto" oninvalid="this.setCustomValidity('Ingrese la relacion de aspecto aqui')"
+                                oninput="this.setCustomValidity('')">
                         </div>
-                        <a href="/resolutions" class="btn btn-secondary" tabindex="5">Cancelar</a>
-                        <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
+                        <div id="buttons-forms">
+                            <a href="/resolutions" class="btn btn-secondary" tabindex="5">Cancelar</a>
+                            <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
+                        </div>
                         </form>
                     </div>
                 </div>

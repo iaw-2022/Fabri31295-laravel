@@ -7,17 +7,21 @@
 @stop
 
 @section('content')
-<div class="card bg-dark mb-3">
+<div id="card-form" class="card bg-dark mb-3">
                 <div class="card-header text-center" style="background-color: #222831;">Crear categoria</div>
                     <div class="card-body bg-white"\>
-                        <form action="/categories" method="POST">
+                        <form id="forms" action="/categories" method="POST">
                                 @csrf
                             <div class="mb-3">
                                 <label for="" class="form-label">Nombre</label>
-                                <input id="name" name="name" type="text" class="form-control" tabindex="1">
+                                <input id="name" name="name" type="text" class="form-control" tabindex="1" required
+                                placeholder="Ingresar nombre" oninvalid="this.setCustomValidity('Ingrese un nombre aqui')"
+                                oninput="this.setCustomValidity('')">
                             </div>
-                            <a href="/categories" class="btn btn-secondary" tabindex="5">Cancelar</a>
-                            <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
+                            <div id="buttons-forms">
+                                <a href="/categories" class="btn btn-secondary" tabindex="5">Cancelar</a>
+                                <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
+                            </div>
                         </form>
                     </div>
                 </div>

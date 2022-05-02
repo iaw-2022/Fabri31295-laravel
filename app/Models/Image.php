@@ -9,6 +9,6 @@ class Image extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["name", "date", "price", "url", "created_at", "updated_at"];
+    protected $fillable = ["name", "filename", "date", "price", "url", "created_at", "updated_at"];
 
 }

@@ -13,6 +13,7 @@ class ImagesSeeder extends Seeder
     {
         Image::create([
             'name' => 'Messi',
+            'filename' => 'Messi.jpg',
             'date' => Carbon::parse('2022-01-01'),
             'price' => '120',
             'url' => 'https://drive.google.com/uc?id=1mxqRMbxMmtfQ30CbsqBeujSeBgx7ToEw&export=media',
@@ -23,6 +24,7 @@ class ImagesSeeder extends Seeder
 
         Image::create([
             'name' => 'Ronaldo',
+            'filename' => 'Ronaldo.jpg',
             'date' => Carbon::parse('2022-02-01'),
             'price' => '100',
             'url' => 'https://drive.google.com/uc?id=11pUU6yS9HvLUOaXGYvK-1dq3v9SxxEOM&export=media',
@@ -32,6 +34,7 @@ class ImagesSeeder extends Seeder
 
         Image::create([
             'name' => 'Neymar',
+            'filename' => 'Neymar.jpg',
             'date' => Carbon::parse('2022-01-03'),
             'price' => '300',
             'url' => 'https://drive.google.com/uc?id=1CUOweaBn-GV5cR3vqQYZP_DH-yyk-c9t&export=media',
@@ -41,6 +44,7 @@ class ImagesSeeder extends Seeder
 
         Image::create([
             'name' => 'Rondon',
+            'filename' => 'Rondon.jpg',
             'date' => Carbon::parse('2022-04-03'),
             'price' => '50',
             'url' => 'https://drive.google.com/uc?id=1iFICYlKERBcJ4yZxrgKx3rkXbDMu90N_&export=media',

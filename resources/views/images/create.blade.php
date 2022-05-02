@@ -7,10 +7,10 @@
 @stop
 
 @section('content')
-<div class="card bg-dark mb-3">
+<div id="card-form" class="card bg-dark mb-3">
                 <div class="card-header text-center">Cargar imagen</div>
                     <div class="card-body bg-white"\>
-                        <form action="/images" method="POST" enctype="multipart/form-data">
+                        <form id="forms" action="/images" method="POST" enctype="multipart/form-data">
                             @csrf
                         <div class="mb-3">
                             <label class="form-label">Nombre</label>
@@ -22,8 +22,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Categoria</label>
-                                <select option name="category" id="category">
-                                    <option value="none" selected disabled hidden>Seleccione una opcion</option>
+                                <select name="category" id="category">
+                                    <option value="">Seleccione una opcion</option>
                                     @foreach($categories as $category)
                                     <option>{{$category->name}}</option>
                                     @endforeach
@@ -32,7 +32,7 @@
                         <div class="mb-3">
                             <label class="form-label">Resolucion</label>
                                 <select option name="resolution" id="resolution">
-                                    <option value="none" selected disabled hidden>Seleccione una opcion</option>
+                                    <option value="">Seleccione una opcion</option>
                                     @foreach($resolutions as $resolution)
                                     <option>{{$resolution->name}}</option>
                                     @endforeach
@@ -50,8 +50,10 @@
                                 <input type="file" id="newImage" name="newImage" accept=".jpg, .jpeg, .png, .svg, .gif">
                             </p>
                         </div>
-                        <a href="/images" class="btn btn-secondary" tabindex="5">Cancelar</a>
-                        <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
+                        <div id="buttons-forms">
+                            <a href="/images" class="btn btn-secondary" tabindex="5">Cancelar</a>
+                            <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
+                        </div>
                         </form>
                     </div>
                 </div>
