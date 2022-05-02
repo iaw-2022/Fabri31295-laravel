@@ -33,6 +33,7 @@ class ImageController extends Controller
         $image = new Image();
         $image->name = $request->get('name');
         $image->filename = $filepath;
+        $image->extension = pathinfo($filepath, PATHINFO_EXTENSION);
         $image->date = $request->get('date');
         $image->price = $request->get('price');
         $image->url = Storage::disk('google')->url($filepath);
@@ -59,12 +60,13 @@ class ImageController extends Controller
         if($_FILES["newImage"]["error"] != 4) {
             $filepath = $_FILES['newImage']['name'];
 
-            if(strcmp($filepath, $image->filename) !== 0) {  // si la imagen subida en nueva
+            if(strcmp($filepath, $image->filename) !== 0) {  // si la imagen subida es nueva
                 Storage::disk('google')->delete($image->filename);
                 $newimagen = file_get_contents($request->file('newImage'));
                 Storage::disk('google')->put($filepath,$newimagen);
                 $image->filename = $filepath;
                 $image->url = Storage::disk('google')->url($filepath);
+                $image->extension = pathinfo($filepath, PATHINFO_EXTENSION);
             }
         }
 

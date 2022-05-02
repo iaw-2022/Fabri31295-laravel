@@ -15,15 +15,17 @@
                 @method('PUT')
             <div class="mb-3">
                 <label class="form-label">Nombre</label>
-                <input id="name" name="name" type="text" class="form-control" value="{{$image->name}}">
+                <input id="name" name="name" type="text" class="form-control" value="{{$image->name}}" required
+                                placeholder="Ingresar nombre" oninvalid="this.setCustomValidity('Ingrese un nombre aqui')"
+                                oninput="this.setCustomValidity('')">
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de creacion</label>
-                <input id="date" name="date" type="date" class="form-control" value="{{$image->date}}">
+                <input id="date" name="date" type="date" class="form-control" value="{{$image->date}}" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Categoria</label>
-                    <select option name="category" id="category" value="{{$image->category}}">
+                    <select option name="category" id="category" value="{{$image->category}}" required>
                         @foreach($categories as $category)
                         <option>{{$category->name}}</option>
                         @endforeach
@@ -31,7 +33,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Resolucion</label>
-                    <select option name="resolution" id="resolution" value="{{$image->resolution}}">
+                    <select option name="resolution" id="resolution" value="{{$image->resolution}}" required>
                         @foreach($resolutions as $resolution)
                         <option>{{$resolution->name}}</option>
                         @endforeach
@@ -39,7 +41,9 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Precio</label>
-                <input id="price" name="price" type="number" class="form-control" value="{{$image->price}}">
+                <input id="price" name="price" type="number" class="form-control" value="{{$image->price}}" required
+                                placeholder="Ingresar precio" oninvalid="this.setCustomValidity('Ingrese el preico aqui')"
+                                oninput="this.setCustomValidity('')">
             </div>
             <div class="mb-3">
                 <p>

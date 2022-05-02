@@ -14,15 +14,17 @@
                             @csrf
                         <div class="mb-3">
                             <label class="form-label">Nombre</label>
-                            <input id="name" name="name" type="text" class="form-control" tabindex="1">
+                            <input id="name" name="name" type="text" class="form-control" tabindex="1"  required
+                                placeholder="Ingresar nombre" oninvalid="this.setCustomValidity('Ingrese un nombre aqui')"
+                                oninput="this.setCustomValidity('')">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Fecha de creacion</label>
-                            <input id="date" name="date" type="date" class="form-control" tabindex="1">
+                            <input id="date" name="date" type="date" class="form-control" tabindex="1" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Categoria</label>
-                                <select name="category" id="category">
+                                <select name="category" id="category" required>
                                     <option value="">Seleccione una opcion</option>
                                     @foreach($categories as $category)
                                     <option>{{$category->name}}</option>
@@ -31,7 +33,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Resolucion</label>
-                                <select option name="resolution" id="resolution">
+                                <select option name="resolution" id="resolution" required>
                                     <option value="">Seleccione una opcion</option>
                                     @foreach($resolutions as $resolution)
                                     <option>{{$resolution->name}}</option>
@@ -40,14 +42,16 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Precio</label>
-                            <input id="price" name="price" type="number" class="form-control" tabindex="1">
+                            <input id="price" name="price" type="number" class="form-control" tabindex="1"  required
+                                placeholder="Ingresar precio" oninvalid="this.setCustomValidity('Ingrese el precio aqui')"
+                                oninput="this.setCustomValidity('')">
                         </div>
                         <div class="mb-3">
                             <p>
                                 <label for="/images">
                                 Elige la imágen que deseas cargar:
                                 </label>
-                                <input type="file" id="newImage" name="newImage" accept=".jpg, .jpeg, .png, .svg, .gif">
+                                <input type="file" id="newImage" name="newImage" accept=".jpg, .jpeg, .png, .svg, .gif" required>
                             </p>
                         </div>
                         <div id="buttons-forms">

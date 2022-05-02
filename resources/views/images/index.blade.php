@@ -22,7 +22,8 @@
                         <th>Nombre</th>
                         <th>Categoria</th>
                         <th>Resolucion</th>
-                        <th>Precio</th>
+                        <th>U$S</th>
+                        <th>Extension</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -30,11 +31,14 @@
                     @foreach($data as $item)
                     <tr>
                         <td>{{$item->id}}</td>
-                        <td id="preview"><img src="{{$item->url}}" width="140px;" height="90px;" alt="preview"/></td>
+                        <td id="preview">
+                            <img class="myImages" id="myImg" src="{{$item->url}}" alt="{{$item->name}}" width="140px;" height="90px;"/>
+                        </td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->category}}</td>
                         <td>{{$item->resolution}}</td>
-                        <td>{{'U$S '.$item->price}}</td>
+                        <td>{{$item->price}}</td>
+                        <td>{{$item->extension}}</td>
                         <td id="actions">
                                 <a href="/images/{{$item->id}}/edit" class="btn"  id="btn-edit"  data-bs-toggle="tooltip" title="Editar imagen">
                                     <i class="fa fa-pencil fa-2x"></i>
@@ -44,8 +48,9 @@
                                 <a href="#delete{{$item->id}}" class="btn" id="btn-delete" data-bs-toggle="tooltip" title="Eliminar imagen" data-toggle="modal">
                                     <i class="fa fa-trash fa-2x"></i>
                                 </a>
-                                @include('components.modal',['dir'=>'images.destroy'])
                         </td>
+                        @include('components.modal',['dir'=>'images.destroy'])
+                        @include('components.imageModal')
                     </tr>
                     @endforeach
                 </tbody>
@@ -56,29 +61,31 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/af-2.3.7/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.2/datatables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/af-2.3.7/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.2/datatables.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/css/imageModal.css"/>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
 @stop
 
 @section('js')
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/af-2.3.7/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.2/datatables.min.js"></script>
-    <script>
-        $(document).ready( function () {
-            $('#images-table').DataTable({
-                "language": {
-                    "search":       "Buscar",
-                    "lengthMenu":   "Mostrar _MENU_ registros por página",
-                    "info":         "Mostrando página _PAGE_ de _PAGES_",
-                    "paginate": {
-                                    "previous": "Anterior",
-                                    "next":     "Siguiente",
-                                    "first":    "Primero",
-                                    "last":     "Último"
-                    }
-                },
-                responsive: true
-            });
-        } );
-    </script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/af-2.3.7/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.2/datatables.min.js"></script>
+<script type="text/javascript" src="/js/imageModal.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#images-table').DataTable({
+            "language": {
+                "search":       "Buscar",
+                "lengthMenu":   "Mostrar _MENU_ registros por página",
+                "info":         "Mostrando página _PAGE_ de _PAGES_",
+                "paginate": {
+                                "previous": "Anterior",
+                                "next":     "Siguiente",
+                                "first":    "Primero",
+                                "last":     "Último"
+                }
+            },
+            responsive: true
+        });
+    } );
+</script>
 @stop

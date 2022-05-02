@@ -14,6 +14,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('filename');
+            $table->string('extension');
             $table->date('date');
             $table->float('price');
             $table->string('url');
