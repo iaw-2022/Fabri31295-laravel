@@ -1,6 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
+            <div id="logo">Proyecto web</div>
         </x-slot>
 
         <!-- Session Status -->

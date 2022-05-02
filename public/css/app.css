@@ -1283,7 +1283,8 @@ select {
 
   .dark\:text-gray-500 {
     --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity));
+    color: white;
+    text-decoration: none;
   }
 
   .dark\:text-white {
@@ -1356,7 +1357,7 @@ select {
   }
 
   .sm\:rounded-lg {
-    border-radius: 0.5rem;
+    border-radius: 25px;
   }
 
   .sm\:px-6 {
@@ -1398,3 +1399,8 @@ select {
   }
 }
 
+#logo {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}

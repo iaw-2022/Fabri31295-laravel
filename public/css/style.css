@@ -259,12 +259,20 @@ table.dataTable tbody td {
     color: #ffffff;
 }
 
+#btn-download {
+    color:rgb(78, 168, 100);
+}
+
 #btn-edit {
     color:rgb(73, 149, 190);
 }
 
 #btn-delete {
     color:rgb(214, 87, 87);
+}
+
+#btn-download:hover {
+    color:rgb(34, 197, 72);
 }
 
 #btn-delete:hover {

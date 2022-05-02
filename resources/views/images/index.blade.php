@@ -17,7 +17,6 @@
             <table id="images-table" class="table text-center  table-hover  table-striped" style="width:100%">
                 <thead class = "thead">
                     <tr>
-                        <th>ID</th>
                         <th>Preview</th>
                         <th>Nombre</th>
                         <th>Categoria</th>
@@ -30,7 +29,6 @@
                 <tbody>
                     @foreach($data as $item)
                     <tr>
-                        <td>{{$item->id}}</td>
                         <td id="preview">
                             <img class="myImages" id="myImg" src="{{$item->url}}" alt="{{$item->name}}" width="140px;" height="90px;"/>
                         </td>
@@ -40,14 +38,17 @@
                         <td>{{$item->price}}</td>
                         <td>{{$item->extension}}</td>
                         <td id="actions">
-                                <a href="/images/{{$item->id}}/edit" class="btn"  id="btn-edit"  data-bs-toggle="tooltip" title="Editar imagen">
-                                    <i class="fa fa-pencil fa-2x"></i>
-                                </a>
-                                    @csrf
-                                    @method('DELETE')
-                                <a href="#delete{{$item->id}}" class="btn" id="btn-delete" data-bs-toggle="tooltip" title="Eliminar imagen" data-toggle="modal">
-                                    <i class="fa fa-trash fa-2x"></i>
-                                </a>
+                            <a target="_blank" href="{{$item->url}}" id="btn-download" class="btn" data-bs-toggle="tooltip" title="Descargar imagen" download>
+                                <i class="fa fa-download fa-2x"></i>
+                            </a>
+                            <a href="/images/{{$item->id}}/edit" class="btn"  id="btn-edit"  data-bs-toggle="tooltip" title="Editar imagen">
+                                <i class="fa fa-pencil fa-2x"></i>
+                            </a>
+                                @csrf
+                                @method('DELETE')
+                            <a href="#delete{{$item->id}}" class="btn" id="btn-delete" data-bs-toggle="tooltip" title="Eliminar imagen" data-toggle="modal">
+                                <i class="fa fa-trash fa-2x"></i>
+                            </a>
                         </td>
                         @include('components.modal',['dir'=>'images.destroy'])
                         @include('components.imageModal')
