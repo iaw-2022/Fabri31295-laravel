@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="card bg-dark mb-3">
-        <div id="card-header"  class="card-header text-white text-center" >Categorias
+        <div id="card-header" class="card-header text-white text-center" >Categorias
             <form action="{{ route('categories.create') }}" method="POST">
                 <a type="submit" href="/categories/create" class="btn btn-default btn-circle" data-bs-toggle="tooltip" title="Crear categoria"><i class="fa fa-plus"></i></a>
             </form>

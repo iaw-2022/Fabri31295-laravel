@@ -10,7 +10,7 @@
 <div id="card-form" class="card bg-dark mb-3">
     <div class="card-header text-center">Editar imagen</div>
         <div class="card-body bg-white"\>
-            <form id="forms" action="/images/{{$image->id}}" method="POST">
+            <form id="forms" action="/images/{{$image->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
             <div class="mb-3">
@@ -44,7 +44,7 @@
             <div class="mb-3">
                 <p>
                     <label for="/images/{{$image->id}}">
-                    Elige la imágen que deseas cargar:
+                    En caso de querer cambiar la imagen, seleccione una:
                     </label>
                     <input type="file" id="newImage" name="newImage" accept=".jpg, .jpeg, .png, .svg, .gif">
                 </p>

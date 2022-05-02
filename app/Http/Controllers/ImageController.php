@@ -27,19 +27,15 @@ class ImageController extends Controller
     function store(Request $request) {
 
         $filepath = $_FILES['newImage']['name'];
-        $filename = pathinfo($filepath, PATHINFO_FILENAME);
-        $extension = pathinfo($filepath, PATHINFO_EXTENSION);
-        $name = $filename.'.'.$extension;
-        $imagen = exif_thumbnail($request->file('newImage'), $width, $height, $type);
-        Storage::disk('google')->put($name,$imagen);
-
+        $imagen = file_get_contents($request->file('newImage'));
+        Storage::disk('google')->put($filepath,$imagen);
 
         $image = new Image();
         $image->name = $request->get('name');
-        $image->filename = $name;
+        $image->filename = $filepath;
         $image->date = $request->get('date');
         $image->price = $request->get('price');
-        $image->url = Storage::disk('google')->url($name);
+        $image->url = Storage::disk('google')->url($filepath);
         $image->category = $request->get('category');
         $image->resolution = $request->get('resolution');
         $image->save();
@@ -58,14 +54,18 @@ class ImageController extends Controller
 
     function update(Request $request, $id) {
 
-        $name = $request->file('newImage')->getClientOriginalName();
         $image = Image::find($id);
 
-        if(strcmp($name, $image->filename) !== 0) {
-            Storage::disk('google')->delete($imagen->filename);
-            $newimagen = exif_thumbnail($request->file('newImage'), $width, $height, $type);
-            Storage::disk('google')->put($name,$newimagen);
-            $image->filename = $name;
+        if($_FILES["newImage"]["error"] != 4) {
+            $filepath = $_FILES['newImage']['name'];
+
+            if(strcmp($filepath, $image->filename) !== 0) {  // si la imagen subida en nueva
+                Storage::disk('google')->delete($image->filename);
+                $newimagen = file_get_contents($request->file('newImage'));
+                Storage::disk('google')->put($filepath,$newimagen);
+                $image->filename = $filepath;
+                $image->url = Storage::disk('google')->url($filepath);
+            }
         }
 
         $image->name = $request->get('name');
