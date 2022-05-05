@@ -1400,7 +1400,8 @@ select {
 }
 
 #logo {
-    color: white;
-    font-size: 30px;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
