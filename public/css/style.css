@@ -370,7 +370,7 @@ table.dataTable tbody td {
     display: block;
 }
 
-#show-permisos {
+#show-permisos, #show-roles {
     max-height: 200px;
     overflow-y: scroll;
     text-align: start;

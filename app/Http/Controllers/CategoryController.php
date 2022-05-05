@@ -26,6 +26,11 @@ class CategoryController extends Controller {
     }
 
     function store(Request $request) {
+
+        $this->validate($request, [
+            'name' => 'required|unique:categories,name'
+        ]);
+
         Category::create($request->all());
         return redirect('/categories');
     }

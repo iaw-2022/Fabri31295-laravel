@@ -10,6 +10,18 @@
 <div id="card-form" class="card bg-dark mb-3">
                 <div id="card-header2" class="card-header text-center">Crear categoria</div>
                     <div class="card-body bg-white"\>
+                        @if ($errors->any())
+                            <div class="alert alert-white alert-dismissible fade show" role="alert">
+                            <strong>¡Revise los campos!</strong>
+                                @foreach ($errors->all() as $error)
+                                    <span class="badge badge-danger">{{ $error }}</span>
+                                @endforeach
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        @endif
+
                         <form id="forms" action="/categories" method="POST">
                                 @csrf
                             <div class="mb-3">

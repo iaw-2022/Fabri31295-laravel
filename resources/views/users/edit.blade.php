@@ -11,6 +11,17 @@
 <div id="card-form" class="card bg-dark mb-3">
                 <div id="card-header2" class="card-header text-center"">Editar usuario</div>
                     <div class="card-body bg-white"\>
+                        @if ($errors->any())
+                            <div class="alert alert-white alert-dismissible fade show" role="alert">
+                            <strong>¡Revise los campos!</strong>
+                                @foreach ($errors->all() as $error)
+                                    <span class="badge badge-danger">{{ $error }}</span>
+                                @endforeach
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        @endif
                         <form id="forms" action="/users/{{$user->id}}" method="POST">
                             @csrf
                             @method('PUT')
@@ -27,15 +38,21 @@
                                 oninput="this.setCustomValidity('')">
                         </div>
                         <div class="mb-3">
-                            <label for="" class="form-label">Nueva contraseña</label>
-                            <input id="password" name="password" type="text" class="form-control" required
-                                placeholder="Ingrese el contraseña" oninvalid="this.setCustomValidity('Ingrese la contraseña aqui')"
+                            <label for="" class="form-label">Ingrese la nueva contraseña (opcional)</label>
+                            <input id="password" name="password" type="text" class="form-control"
+                                placeholder="Ingrese una nueva contraseña" oninvalid="this.setCustomValidity('Ingrese la contraseña aqui')"
                                 oninput="this.setCustomValidity('')">
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <label for="">Rol</label>
-                                {!! Form::select('roles[]', $roles,[], array('class' => 'form-control')) !!}
+                                <div id="show-roles" class="mb-3">
+                                    @foreach($roles as $name)
+                                    <label>{{ Form::checkbox('roles[]', $name, in_array($name, $userRoles) ? true : false, array('class' => 'name')) }}
+                                        {{ $name }}</label>
+                                    <br/>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                         <div id="buttons-forms">

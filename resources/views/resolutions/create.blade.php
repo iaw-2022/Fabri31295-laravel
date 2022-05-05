@@ -10,21 +10,32 @@
 <div id="card-form" class="card bg-dark mb-3">
                 <div id="card-header2" class="card-header text-center">Crear registro</div>
                     <div class="card-body bg-white"\>
+                        @if ($errors->any())
+                            <div class="alert alert-white alert-dismissible fade show" role="alert">
+                            <strong>¡Revise los campos!</strong>
+                                @foreach ($errors->all() as $error)
+                                    <span class="badge badge-danger">{{ $error }}</span>
+                                @endforeach
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        @endif
                         <form id="forms" action="/resolutions" method="POST">
                             @csrf
                         <div class="mb-3">
                             <label for="" class="form-label">Resolucion</label>
-                            <input id="name1" name="name1" type="text" class="form-control" tabindex="1" required
+                            <input id="name1" name="name1" type="number" class="form-control" tabindex="1" required
                                 placeholder="Ancho" oninvalid="this.setCustomValidity('Ingrese el ancho aqui')"
                                 oninput="this.setCustomValidity('')">
                             <label for="" class="form-label">x</label>
-                            <input id="name2" name="name2" type="text" class="form-control" tabindex="1" required
+                            <input id="name2" name="name2" type="number" class="form-control" tabindex="1" required
                                 placeholder="Alto" oninvalid="this.setCustomValidity('Ingrese el alto aqui')"
                                 oninput="this.setCustomValidity('')">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Relacion de aspecto</label>
-                            <input id="aspect_ratio" name="aspect_ratio" type="text" class="form-control" tabindex="2" required
+                            <input id="aspect_ratio" name="aspect_ratio" type="number" class="form-control" tabindex="2" required
                                 placeholder="Ingrese la relacion de aspecto" oninvalid="this.setCustomValidity('Ingrese la relacion de aspecto aqui')"
                                 oninput="this.setCustomValidity('')">
                         </div>

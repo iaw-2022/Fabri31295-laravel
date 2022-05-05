@@ -26,6 +26,11 @@ class ResolutionController extends Controller {
 
     function store(Request $request) {
 
+        $request['name'] = $request->get('name1').'x'.$request->get('name2');
+        $this->validate($request, [
+            'name' => 'required|unique:resolutions,name'
+        ]);
+
         $resolution = new Resolution();
         $resolution->name = $request->get('name1').'x'.$request->get('name2');
         $resolution->aspect_ratio = $request->get('aspect_ratio');

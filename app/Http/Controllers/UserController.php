@@ -41,7 +41,7 @@ class UserController extends Controller {
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->password = bcrypt($request->get('password'));
-        $user->assignRole($request->input('roles'));
+        $user->syncRoles($request->input('roles'));
 
         $user->save();
 
@@ -52,17 +52,16 @@ class UserController extends Controller {
 
         $user = User::find($id);
         $roles = Role::pluck('name','name')->all();
-        $userRole = $user->roles->pluck('name','name')->all();
+        $userRoles = $user->roles->pluck('name','name')->all();
 
-        return view('users.edit',compact('user','roles','userRole'));
+        return view('users.edit',compact('user','roles','userRoles'));
     }
 
     public function update(Request $request, $id)
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id,
-            'password' => 'same:confirm-password',
+            'email' => 'required|email',
             'roles' => 'required'
         ]);
 
@@ -72,7 +71,7 @@ class UserController extends Controller {
         if(!empty($request->get('password'))){
             $user->password = bcrypt($request->get('password'));
         }
-        $user->assignRole($request->input('roles'));
+        $user->SyncRoles($request->input('roles'));
         $user->save();
 
         return redirect('/users');
