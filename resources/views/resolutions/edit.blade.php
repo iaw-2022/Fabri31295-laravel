@@ -8,7 +8,7 @@
 
 @section('content')
 <div id="card-form" class="card bg-dark mb-3">
-                <div class="card-header text-center"">Editar registro</div>
+                <div id="card-header2" class="card-header text-center"">Editar registro</div>
                     <div class="card-body bg-white"\>
                         <form id="forms" action="/resolutions/{{$resolution->id}}" method="POST">
                             @csrf

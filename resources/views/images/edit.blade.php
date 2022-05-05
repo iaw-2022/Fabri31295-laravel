@@ -8,7 +8,7 @@
 
 @section('content')
 <div id="card-form" class="card bg-dark mb-3">
-    <div class="card-header text-center">Editar imagen</div>
+    <div id="card-header2" class="card-header text-center">Editar imagen</div>
         <div class="card-body bg-white"\>
             <form id="forms" action="/images/{{$image->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -17,6 +17,12 @@
                 <label class="form-label">Nombre</label>
                 <input id="name" name="name" type="text" class="form-control" value="{{$image->name}}" required
                                 placeholder="Ingresar nombre" oninvalid="this.setCustomValidity('Ingrese un nombre aqui')"
+                                oninput="this.setCustomValidity('')">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripcion</label>
+                <input id="description" name="description" type="text" class="form-control" value="{{$image->description}}" required
+                                placeholder="Ingresar descripcion" oninvalid="this.setCustomValidity('Ingrese una descripcion aqui')"
                                 oninput="this.setCustomValidity('')">
             </div>
             <div class="mb-3">

@@ -8,19 +8,19 @@
 
 @section('content')
 <div id="card-form" class="card bg-dark mb-3">
-    <div id="card-header2" class="card-header text-center">Editar categoria</div>
+    <div id="card-header2" class="card-header text-center">Editar permiso</div>
         <div class="card-body bg-white"\>
-            <form id="forms" action="/categories/{{$category->id}}" method="POST">
+            <form id="forms" action="/permissions/{{$permission->id}}" method="POST">
                 @csrf
                 @method('PUT')
             <div class="mb-3">
                 <label class="form-label">Nombre</label>
-                <input id="name" name="name" type="text" class="form-control" value="{{$category->name}}" required
+                <input id="name" name="name" type="text" class="form-control" value="{{$permission->name}}" required
                     placeholder="Ingresar nombre" oninvalid="this.setCustomValidity('Ingrese un nombre aqui')"
                     oninput="this.setCustomValidity('')">
             </div>
             <div id="buttons-forms">
-                <a href="/categories" class="btn btn-secondary" tabindex="5">Cancelar</a>
+                <a href="/permissions" class="btn btn-secondary" tabindex="5">Cancelar</a>
                 <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
             </div>
             </form>

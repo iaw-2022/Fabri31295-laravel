@@ -8,9 +8,9 @@
 
 @section('content')
 <div id="card-form" class="card bg-dark mb-3">
-                <div id="card-header2" class="card-header text-center">Crear categoria</div>
+                <div id="card-header2" class="card-header text-center">Crear permiso</div>
                     <div class="card-body bg-white"\>
-                        <form id="forms" action="/categories" method="POST">
+                        <form id="forms" action="/permissions" method="POST">
                                 @csrf
                             <div class="mb-3">
                                 <label for="" class="form-label">Nombre</label>
@@ -19,7 +19,7 @@
                                 oninput="this.setCustomValidity('')">
                             </div>
                             <div id="buttons-forms">
-                                <a href="/categories" class="btn btn-secondary" tabindex="5">Cancelar</a>
+                                <a href="/permissions" class="btn btn-secondary" tabindex="5">Cancelar</a>
                                 <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
                             </div>
                         </form>

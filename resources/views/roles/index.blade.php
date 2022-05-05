@@ -8,58 +8,47 @@
 
 @section('content')
 <div class="card bg-dark mb-3">
-    <div id="card-header"  class="card-header text-white text-center" >Imagenes
-        @can('crear-imagen')
-        <form action="{{ route('images.create') }}" method="POST">
-            <a type="submit" href="/images/create" class="btn btn-default btn-circle" data-bs-toggle="tooltip" title="Añadir imagen"><i class="fa fa-plus"></i></a>
+    <div id="card-header" class="card-header text-white text-center">Roles
+        @can('crear-rol')
+        <form action="{{ route('users.create') }}" method="POST">
+            <a type="submit" href="/roles/create" class="btn btn-default btn-circle" data-bs-toggle="tooltip" title="Añadir permiso"><i class="fa fa-plus"></i></a>
         </form>
         @endcan
-        </div>
-        <div class="card-body bg-white"\>
-            <table id="images-table" class="table text-center  table-hover  table-striped" style="width:100%">
-                <thead class = "thead">
+    </div>
+        <div class="card-body bg-white">
+            <table id="users-table" class="display table text-center row-border table-striped table-hover cell-border" style="width:100%">
+                <thead class = "">
                     <tr>
-                        <th>Preview</th>
+                        <th>ID</th>
                         <th>Nombre</th>
-                        <th>Categoria</th>
-                        <th>Resolucion</th>
-                        <th>U$S</th>
-                        <th>Extension</th>
+                        <th>Fecha de creacion</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($data as $item)
                     <tr>
-                        <td id="preview">
-                            <img class="myImages" id="myImg" src="{{$item->url}}" alt="{{$item->name}}" width="140px;" height="90px;"/>
-                        </td>
+                        <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
-                        <td>{{$item->category}}</td>
-                        <td>{{$item->resolution}}</td>
-                        <td>{{$item->price}}</td>
-                        <td>{{$item->extension}}</td>
-                        <td id="actions">
-                            @can('ver-imagen')
-                            <a href="{{ route('images.show', $item->id) }}" class="btn"  id="btn-show"  data-bs-toggle="tooltip" title="Mostrar rol">
+                        <td>{{$item->created_at}}</td>
+                        <td>
+                            @can('ver-rol')
+                            <a href="{{ route('roles.show', $item->id) }}" class="btn"  id="btn-show"  data-bs-toggle="tooltip" title="Mostrar rol">
                                 <i class="fa fa-search fa-2x"></i>
                             </a>
                             @endcan
-                            @can('editar-imagen')
-                            <a href="/images/{{$item->id}}/edit" class="btn"  id="btn-edit"  data-bs-toggle="tooltip" title="Editar imagen">
+                            @can('editar-rol')
+                            <a href="{{ route('roles.edit', $item->id) }}" class="btn"  id="btn-edit"  data-bs-toggle="tooltip" title="Editar rol">
                                 <i class="fa fa-pencil fa-2x"></i>
                             </a>
                             @endcan
-                                @csrf
-                                @method('DELETE')
-                            @can('borrar-imagen')
-                            <a href="#delete{{$item->id}}" class="btn" id="btn-delete" data-bs-toggle="tooltip" title="Eliminar imagen" data-toggle="modal">
+                            @can('borrar-rol')
+                            <a href="#delete{{$item->id}}" id="btn-delete" data-toggle="modal" class="btn" data-bs-toggle="tooltip" title="Eliminar rol" >
                                 <i class="fa fa-trash fa-2x"></i>
                             </a>
                             @endcan
+                            @include('components.modal',['dir'=>'roles.destroy'])
                         </td>
-                        @include('components.modal',['dir'=>'images.destroy'])
-                        @include('components.imageModal')
                     </tr>
                     @endforeach
                 </tbody>
@@ -72,16 +61,14 @@
 @section('css')
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/af-2.3.7/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.2/datatables.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="/css/imageModal.css"/>
 <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 @stop
 
 @section('js')
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/af-2.3.7/r-2.2.9/rg-1.1.4/rr-1.2.8/sc-2.0.5/sb-1.3.2/datatables.min.js"></script>
-<script type="text/javascript" src="/js/imageModal.js"></script>
 <script>
     $(document).ready( function () {
-        $('#images-table').DataTable({
+        $('#users-table').DataTable({
             "language": {
                 "search":       "Buscar",
                 "lengthMenu":   "Mostrar _MENU_ registros por página",

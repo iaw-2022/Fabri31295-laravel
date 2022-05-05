@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('extension');
             $table->date('date');
             $table->float('price');
+            $table->string('description');
             $table->string('url');
             $table->timestamps();
         });

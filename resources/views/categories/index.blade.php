@@ -9,9 +9,11 @@
 @section('content')
 <div class="card bg-dark mb-3">
         <div id="card-header" class="card-header text-white text-center" >Categorias
+            @can('crear-categoria')
             <form action="{{ route('categories.create') }}" method="POST">
                 <a type="submit" href="/categories/create" class="btn btn-default btn-circle" data-bs-toggle="tooltip" title="Crear categoria"><i class="fa fa-plus"></i></a>
             </form>
+            @endcan
         </div>
             <div class="card-body bg-white ">
                 <table id="categories-table" class="table text-center  table-hover  table-striped" style="width:100%">
@@ -30,14 +32,18 @@
                             <td>{{$item->name}}</td>
                             <td>{{$item->created_at}}</td>
                             <td>
+                                @can('editar-categoria')
                                 <a href="/categories/{{$item->id}}/edit"  id="btn-edit" class="btn" data-bs-toggle="tooltip" title="Editar categoria">
                                     <i class="fa fa-pencil fa-2x"></i>
                                 </a>
+                                @endcan
                                     @csrf
                                     @method('DELETE')
+                                    @can('borrar-categoria')
                                     <a href="#delete{{$item->id}}" class="btn" id="btn-delete" data-bs-toggle="tooltip" title="Eliminar categoria" data-toggle="modal">
                                         <i class="fa fa-trash fa-2x"></i>
                                     </a>
+                                    @endcan
                                     @include('components.modal',['dir'=>'categories.destroy'])
                             </td>
                         </tr>

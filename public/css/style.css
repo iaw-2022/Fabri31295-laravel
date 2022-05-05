@@ -68,12 +68,12 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 
 [class*="sidebar-dark"] .brand-link, [class*="sidebar-dark"] .brand-link .pushmenu {
 	color: white;
-    text-align: center;
+    text-align: start;
 }
 
 [class*="sidebar-dark-"] .sidebar a {
 	color: white;
-    text-align: center;
+    text-align: start;
 }
 
 .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
@@ -114,6 +114,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .card-body {
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
+    min-width: 300px;
 }
 thead {
     font-size: 17px;
@@ -259,7 +260,7 @@ table.dataTable tbody td {
     color: #ffffff;
 }
 
-#btn-download {
+#btn-show {
     color:rgb(78, 168, 100);
 }
 
@@ -271,7 +272,7 @@ table.dataTable tbody td {
     color:rgb(214, 87, 87);
 }
 
-#btn-download:hover {
+#btn-show:hover {
     color:rgb(34, 197, 72);
 }
 
@@ -331,6 +332,7 @@ table.dataTable tbody td {
     margin-top: 20px;
     float: none;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 #forms {
@@ -356,4 +358,20 @@ table.dataTable tbody td {
 #buttons-forms {
     margin-top: 30px;
     margin-bottom: 3px;
+    display: flex;
+}
+
+.fa-fw {
+	font-size: 23px;
+    padding-right: 9px;
+}
+
+#card-header2 {
+    display: block;
+}
+
+#show-permisos {
+    max-height: 200px;
+    overflow-y: scroll;
+    text-align: start;
 }

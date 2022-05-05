@@ -8,22 +8,20 @@
 
 @section('content')
 <div class="card bg-dark mb-3">
-    <div id="card-header" class="card-header text-white text-center">Usuarios
-        @can('crear-usuario')
+    <div id="card-header" class="card-header text-white text-center">Permisos
+        @can('crear-permiso')
         <form action="{{ route('users.create') }}" method="POST">
-            <a type="submit" href="/users/create" class="btn btn-default btn-circle" data-bs-toggle="tooltip" title="Crear usuario"><i class="fa fa-plus"></i></a>
+            <a type="submit" href="/permissions/create" class="btn btn-default btn-circle" data-bs-toggle="tooltip" title="Añadir permiso"><i class="fa fa-plus"></i></a>
         </form>
         @endcan
     </div>
-        <div class="card-body bg-white ">
-            <table id="users-table" class="display table text-center row-border  table-striped table-hover cell-border" style="width:100%">
-                <thead>
+        <div class="card-body bg-white">
+            <table id="users-table" class="display table text-center row-border table-striped table-hover cell-border" style="width:100%">
+                <thead class = "">
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Email</th>
                         <th>Fecha de creacion</th>
-                        <th>Roles</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -32,27 +30,19 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
-                        <td>{{$item->email}}</td>
                         <td>{{$item->created_at}}</td>
                         <td>
-                            @if(!empty($item->getRoleNames()))
-                            @foreach($item->getRoleNames() as $rolNombre)
-                                <h5><span class="badge badge-dark">{{ $rolNombre }}</span></h5>
-                            @endforeach
-                            @endif
-                        </td>
-                        <td>
-                            @can('editar-usuario')
-                            <a href="/users/{{$item->id}}/edit" class="btn" id="btn-edit" data-bs-toggle="tooltip" title="Editar usuario">
+                            @can('editar-permiso')
+                            <a href="{{ route('permissions.edit', $item->id) }}" class="btn"  id="btn-edit"  data-bs-toggle="tooltip" title="Editar permiso">
                                 <i class="fa fa-pencil fa-2x"></i>
                             </a>
                             @endcan
-                            @can('borrar-usuario')
-                            <a href="#delete{{$item->id}}" id="btn-delete" data-toggle="modal" class="btn" data-bs-toggle="tooltip" title="Eliminar resolucion" >
+                            @can('borrar-permiso')
+                            <a href="#delete{{$item->id}}" id="btn-delete" data-toggle="modal" class="btn" data-bs-toggle="tooltip" title="Eliminar permiso" >
                                 <i class="fa fa-trash fa-2x"></i>
                             </a>
                             @endcan
-                            @include('components.modal',['dir'=>'users.destroy'])
+                            @include('components.modal',['dir'=>'permissions.destroy'])
                         </td>
                     </tr>
                     @endforeach

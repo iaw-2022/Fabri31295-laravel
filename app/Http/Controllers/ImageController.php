@@ -7,13 +7,25 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class ImageController extends Controller
-{
+class ImageController extends Controller {
+
+    function __construct() {
+        $this->middleware('permission:ver-imagen|crear-imagen|editar-imagen|borrar-imagen', ['only' => ['index','show']]);
+        $this->middleware('permission:crear-imagen', ['only' => ['create','store']]);
+        $this->middleware('permission:editar-imagen', ['only' => ['edit','update']]);
+        $this->middleware('permission:borrar-imagen', ['only' => ['destroy']]);
+    }
 
     public function index() {
 
         $data = DB::table('images')->get();
         return view('images.index',['data' => $data]);
+    }
+
+    function show($id) {
+        $image = Image::find($id);
+
+        return view('images.show',['image' => $image]);
     }
 
     function create() {
@@ -36,6 +48,7 @@ class ImageController extends Controller
         $image->extension = pathinfo($filepath, PATHINFO_EXTENSION);
         $image->date = $request->get('date');
         $image->price = $request->get('price');
+        $image->description = $request->get('description');
         $image->url = Storage::disk('google')->url($filepath);
         $image->category = $request->get('category');
         $image->resolution = $request->get('resolution');
@@ -73,6 +86,7 @@ class ImageController extends Controller
         $image->name = $request->get('name');
         $image->date = $request->get('date');
         $image->price = $request->get('price');
+        $image->description = $request->get('description');
         $image->category = $request->get('category');
         $image->resolution = $request->get('resolution');
         $image->save();

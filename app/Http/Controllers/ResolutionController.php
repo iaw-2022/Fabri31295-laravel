@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\Models\Resolution;
 
-class ResolutionController extends Controller
-{
+class ResolutionController extends Controller {
+
+    function __construct() {
+        $this->middleware('permission:ver-resolucion|crear-resolucion|editar-resolucion|borrar-resolucion', ['only' => ['index']]);
+        $this->middleware('permission:crear-resolucion', ['only' => ['create','store']]);
+        $this->middleware('permission:editar-resolucion', ['only' => ['edit','update']]);
+        $this->middleware('permission:borrar-resolucion', ['only' => ['destroy']]);
+    }
+
     function index() {
         $data = DB::table('resolutions')->get();
         return view('resolutions.index',['data' => $data]);
     }
 
     function create() {
-
         return view('resolutions.create');
     }
 

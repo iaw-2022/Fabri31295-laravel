@@ -8,47 +8,53 @@
 
 @section('content')
 <div class="card bg-dark mb-3">
-                <div id="card-header" class="card-header text-white text-center" >Resoluciones
-                    <form action="{{ route('resolutions.create') }}" method="POST">
-                        <a type="submit" href="/resolutions/create" class="btn btn-default btn-circle" data-bs-toggle="tooltip" title="Crear resolucion"><i class="fa fa-plus"></i></a>
-                    </form>
-                </div>
-                    <div class="card-body bg-white ">
-                        <table id="resolutions-table" class="table text-center  table-hover  table-striped" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Resolucion</th>
-                                    <th>Relacion de aspecto</th>
-                                    <th>Fecha de creacion</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($data as $item)
-                                <tr>
-                                    <td>{{$item->id}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->aspect_ratio}}</td>
-                                    <td>{{$item->created_at}}</td>
-                                    <td>
-                                        <a href="/resolutions/{{$item->id}}/edit" class="btn"  id="btn-edit" data-bs-toggle="tooltip" title="Editar resolucion">
-                                            <i class="fa fa-pencil fa-2x"></i>
-                                        </a>
-                                            @csrf
-                                            @method('DELETE')
-                                        <a href="#delete{{$item->id}}" class="btn" id="btn-delete" data-bs-toggle="tooltip" title="Eliminar resolucion" data-toggle="modal">
-                                            <i class="fa fa-trash fa-2x"></i>
-                                        </a>
-                                    @include('components.modal',['dir'=>'resolutions.destroy'])
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div id="card-header" class="card-header text-white text-center" >Resoluciones
+        @can('crear-resolucion')
+        <form action="{{ route('resolutions.create') }}" method="POST">
+            <a type="submit" href="/resolutions/create" class="btn btn-default btn-circle" data-bs-toggle="tooltip" title="Crear resolucion"><i class="fa fa-plus"></i></a>
+        </form>
+        @endcan
+    </div>
+        <div class="card-body bg-white ">
+            <table id="resolutions-table" class="table text-center  table-hover  table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Resolucion</th>
+                        <th>Relacion de aspecto</th>
+                        <th>Fecha de creacion</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($data as $item)
+                    <tr>
+                        <td>{{$item->id}}</td>
+                        <td>{{$item->name}}</td>
+                        <td>{{$item->aspect_ratio}}</td>
+                        <td>{{$item->created_at}}</td>
+                        <td>
+                            @can('editar-resolucion')
+                            <a href="/resolutions/{{$item->id}}/edit" class="btn"  id="btn-edit" data-bs-toggle="tooltip" title="Editar resolucion">
+                                <i class="fa fa-pencil fa-2x"></i>
+                            </a>
+                            @endcan
+                                @csrf
+                                @method('DELETE')
+                            @can('borrar-resolucion')
+                            <a href="#delete{{$item->id}}" class="btn" id="btn-delete" data-bs-toggle="tooltip" title="Eliminar resolucion" data-toggle="modal">
+                                <i class="fa fa-trash fa-2x"></i>
+                            </a>
+                            @endcan
+                        @include('components.modal',['dir'=>'resolutions.destroy'])
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 @stop
 
 @section('css')

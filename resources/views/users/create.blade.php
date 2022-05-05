@@ -8,7 +8,7 @@
 
 @section('content')
 <div id="card-form" class="card bg-dark mb-3">
-                <div class="card-header text-center"">Crear usuario</div>
+                <div id="card-header2" class="card-header text-center"">Crear usuario</div>
                     <div class="card-body bg-white"\>
                         <form id="forms" action="/users" method="POST">
                             @csrf
@@ -29,6 +29,12 @@
                             <input id="password" name="password" type="text" class="form-control" tabindex="2" required
                                 placeholder="Ingrese el contraseña" oninvalid="this.setCustomValidity('Ingrese la contraseña aqui')"
                                 oninput="this.setCustomValidity('')">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <label for="">Rol</label>
+                                {!! Form::select('roles[]', $roles,[], array('class' => 'form-control')) !!}
+                            </div>
                         </div>
                         <div id="buttons-forms">
                             <a href="/users" class="btn btn-secondary" tabindex="5">Cancelar</a>
