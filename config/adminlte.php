@@ -231,29 +231,42 @@ return [
             'topnav_right' => true,
         ],
         [
-            'text' => 'blog',
-            'url'  => '/',
-            'can'  => 'manage-blog',
-        ],
-        [
             'text' => 'Categorias',
             'url'  => '/categories',
             'icon' => 'fas fa-fw fa-solid fa-cube',
+            'can' => 'ver-categoria',
         ],
         [
             'text' => 'Resoluciones',
             'url'  => '/resolutions',
             'icon' => 'fas fa-fw fa-expand',
-        ],
-        [
-            'text' => 'Imagenes',
-            'url'  => '/images',
-            'icon' => 'fas fa-fw fa-thin fa-file-image',
+            'can' => 'ver-resolucion',
         ],
         [
             'text' => 'Usuarios',
             'url'  => '/users',
             'icon' => 'fas fa-fw fa-duotone fa-users',
+            'can' => 'ver-usuario',
+        ],
+        [
+            'text' => 'Imagenes',
+            'url'  => '/images',
+            'icon' => 'fas fa-fw fa-thin fa-file-image',
+            'can' => 'ver-imagen',
+        ],
+
+        [
+            'text' => 'Roles',
+            'url'  => '/roles',
+            'icon' => 'fas fa-fw fa-thin fa-id-card',
+            'can' => 'ver-rol',
+        ],
+
+        [
+            'text' => 'Permisos',
+            'url'  => '/permissions',
+            'icon' => 'fas fa-fw fa-thin fa-user-secret',
+            'can' => 'ver-permiso',
         ],
 
     ],

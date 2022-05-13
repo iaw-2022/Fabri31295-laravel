@@ -177,7 +177,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\GoogleServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class
 
     ],
 

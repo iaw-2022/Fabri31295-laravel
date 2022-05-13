@@ -7,13 +7,16 @@
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
-        "intervention/image": "dev-master",
+        "intervention/image": "^2.7",
         "jeroennoten/laravel-adminlte": "^3.8",
+        "joserick/png-metadata": "^0.2.7",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
+        "laravelcollective/html": "^6.3",
         "league/flysystem": "3.0",
         "masbug/flysystem-google-drive-ext": "2.2",
+        "spatie/laravel-permission": "^5.5",
         "yajra/laravel-datatables-oracle": "^9.19"
     },
     "require-dev": {

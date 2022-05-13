@@ -13,9 +13,12 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->id();
             $table->string('name');
+            $table->string('filename');
+            $table->string('extension');
             $table->date('date');
             $table->float('price');
-            $table->string('public_url');
+            $table->string('description');
+            $table->string('url');
             $table->timestamps();
         });
     }
