@@ -38,7 +38,7 @@ class ImageController extends Controller {
 
     function store(Request $request) {
 
-        $filepath = $_FILES['newImage']['name'];
+        /*$filepath = $_FILES['newImage']['name'];
         $imagen = file_get_contents($request->file('newImage'));
         Storage::disk('google')->put($filepath,$imagen);
 
@@ -52,9 +52,12 @@ class ImageController extends Controller {
         $image->url = Storage::disk('google')->url($filepath);
         $image->category = $request->get('category');
         $image->resolution = $request->get('resolution');
-        $image->save();
+        $image->save();*/
 
-        return redirect('/images');
+        $mensaje = "Hola desde Laravel!";
+        echo "<script>console.log('".$mensaje."')</script>";
+
+        //return redirect('/images');
     }
 
     function edit($id) {
@@ -68,7 +71,7 @@ class ImageController extends Controller {
 
     function update(Request $request, $id) {
 
-        $image = Image::find($id);
+        /*$image = Image::find($id);
 
         if($_FILES["newImage"]["error"] != 4) {
             $filepath = $_FILES['newImage']['name'];
@@ -89,7 +92,7 @@ class ImageController extends Controller {
         $image->description = $request->get('description');
         $image->category = $request->get('category');
         $image->resolution = $request->get('resolution');
-        $image->save();
+        $image->save();*/
 
         return redirect('/images');
     }
