@@ -6,6 +6,8 @@ use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Kreait\Laravel\Firebase\Facades\Firebase;    
+use Kreait\Firebase\Messaging\CloudMessage;
 
 class ImageController extends Controller {
 
@@ -38,7 +40,7 @@ class ImageController extends Controller {
 
     function store(Request $request) {
 
-        /*$filepath = $_FILES['newImage']['name'];
+        $filepath = $_FILES['newImage']['name'];
         $imagen = file_get_contents($request->file('newImage'));
         Storage::disk('google')->put($filepath,$imagen);
 
@@ -52,12 +54,37 @@ class ImageController extends Controller {
         $image->url = Storage::disk('google')->url($filepath);
         $image->category = $request->get('category');
         $image->resolution = $request->get('resolution');
-        $image->save();*/
+        $image->save();
+        
+        $notification = Firebase::messaging();
 
-        $mensaje = "Hola desde Laravel!";
-        echo "<script>console.log('".$mensaje."')</script>";
+        $tokens = DB::table('fcm_tokens')->pluck('token')->toArray();
 
-        //return redirect('/images');
+        $uniqueTokens = array_unique($tokens);
+
+        if (!empty($uniqueTokens)) {
+            $title = 'Nueva imagen!!';
+            $body = $request->get('name') . ' está disponible en la tienda';
+        
+            foreach ($tokens as $token) {
+                try {
+                    $message = CloudMessage::fromArray([
+                        'token' => $token,
+                        'notification' => [
+                            'title' => $title,
+                            'body' => $body,
+                        ],
+                    ]);
+        
+                    $notification->send($message);
+        
+                } catch (\Exception $e) {
+                    logger()->error('Error al enviar notificación FCM para el token ' . $token . ': ' . $e->getMessage());
+                }
+            }
+        }
+
+        return redirect('/images');
     }
 
     function edit($id) {
@@ -71,7 +98,7 @@ class ImageController extends Controller {
 
     function update(Request $request, $id) {
 
-        /*$image = Image::find($id);
+        $image = Image::find($id);
 
         if($_FILES["newImage"]["error"] != 4) {
             $filepath = $_FILES['newImage']['name'];
@@ -92,7 +119,7 @@ class ImageController extends Controller {
         $image->description = $request->get('description');
         $image->category = $request->get('category');
         $image->resolution = $request->get('resolution');
-        $image->save();*/
+        $image->save();
 
         return redirect('/images');
     }
